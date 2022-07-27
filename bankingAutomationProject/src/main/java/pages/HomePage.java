@@ -8,13 +8,13 @@ import org.openqa.selenium.support.FindBy;
 import framework.PageObjectBase;
 
 public class HomePage extends PageObjectBase{
-	
+
 	@CacheLookup
-	@FindBy(linkText = "Customer Login")
+	@FindBy(css = "[ng-click='customer()']")
 	private WebElement customerLoginBtn;
-	
+
 	@CacheLookup
-	@FindBy(linkText = "Bank Manager Login")
+	@FindBy(css = "[ng-click='manager()']")
 	private WebElement bankManagerLoginBtn;
 
 	public HomePage(WebDriver driver, String baseUrl) {
@@ -26,10 +26,10 @@ public class HomePage extends PageObjectBase{
 
 		return this;
 	}
-	
+
 	public CustomerLoginPage clickCustomerLoginButton() {
 		elementControl.clickElement(customerLoginBtn);
-		
+
 		return new CustomerLoginPage (getDriver(), getBaseUrl());
 	}
 
