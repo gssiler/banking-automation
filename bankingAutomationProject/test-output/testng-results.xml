@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-27T11:27:41 EDT" name="Default suite" finished-at="2022-07-27T11:27:52 EDT" duration-ms="10401">
+  <suite started-at="2022-07-27T11:49:43 EDT" name="Default suite" finished-at="2022-07-27T11:49:52 EDT" duration-ms="9785">
     <groups>
     </groups>
-    <test started-at="2022-07-27T11:27:41 EDT" name="Default test" finished-at="2022-07-27T11:27:52 EDT" duration-ms="10401">
+    <test started-at="2022-07-27T11:49:43 EDT" name="Default test" finished-at="2022-07-27T11:49:52 EDT" duration-ms="9785">
       <class name="BankingTests">
-        <test-method is-config="true" signature="setup()[pri:0, instance:BankingTests@8909f18]" started-at="2022-07-27T11:27:41 EDT" name="setup" finished-at="2022-07-27T11:27:47 EDT" duration-ms="5936" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:BankingTests@8909f18]" started-at="2022-07-27T11:49:43 EDT" name="setup" finished-at="2022-07-27T11:49:47 EDT" duration-ms="4755" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="canLogIntoCustomerAccount()[pri:0, instance:BankingTests@8909f18]" started-at="2022-07-27T11:27:47 EDT" name="canLogIntoCustomerAccount" finished-at="2022-07-27T11:27:52 EDT" duration-ms="4225" status="PASS">
+        <test-method signature="canLogIntoCustomerAccount()[pri:0, instance:BankingTests@8909f18]" started-at="2022-07-27T11:49:47 EDT" name="canLogIntoCustomerAccount" finished-at="2022-07-27T11:49:52 EDT" duration-ms="4725" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- canLogIntoCustomerAccount -->
-        <test-method is-config="true" signature="cleanup(org.testng.ITestResult)[pri:0, instance:BankingTests@8909f18]" started-at="2022-07-27T11:27:52 EDT" name="cleanup" finished-at="2022-07-27T11:27:52 EDT" duration-ms="186" status="PASS">
+        <test-method is-config="true" signature="cleanup(org.testng.ITestResult)[pri:0, instance:BankingTests@8909f18]" started-at="2022-07-27T11:49:52 EDT" name="cleanup" finished-at="2022-07-27T11:49:52 EDT" duration-ms="241" status="PASS">
           <params>
             <param index="0">
               <value>
