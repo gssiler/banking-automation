@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-07-27T11:27:41 EDT" name="Default suite" finished-at="2022-07-27T11:27:52 EDT" duration-ms="10401">
+    <groups>
+    </groups>
+    <test started-at="2022-07-27T11:27:41 EDT" name="Default test" finished-at="2022-07-27T11:27:52 EDT" duration-ms="10401">
+      <class name="BankingTests">
+        <test-method is-config="true" signature="setup()[pri:0, instance:BankingTests@8909f18]" started-at="2022-07-27T11:27:41 EDT" name="setup" finished-at="2022-07-27T11:27:47 EDT" duration-ms="5936" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="canLogIntoCustomerAccount()[pri:0, instance:BankingTests@8909f18]" started-at="2022-07-27T11:27:47 EDT" name="canLogIntoCustomerAccount" finished-at="2022-07-27T11:27:52 EDT" duration-ms="4225" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canLogIntoCustomerAccount -->
+        <test-method is-config="true" signature="cleanup(org.testng.ITestResult)[pri:0, instance:BankingTests@8909f18]" started-at="2022-07-27T11:27:52 EDT" name="cleanup" finished-at="2022-07-27T11:27:52 EDT" duration-ms="186" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=canLogIntoCustomerAccount status=SUCCESS method=BankingTests.canLogIntoCustomerAccount()[pri:0, instance:BankingTests@8909f18] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanup -->
+      </class> <!-- BankingTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

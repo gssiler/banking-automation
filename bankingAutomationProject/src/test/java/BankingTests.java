@@ -9,17 +9,17 @@ public class BankingTests extends xyzBankingTestBase{
 	@Test
 	public void canLogIntoCustomerAccount() {
 
-		String expectedAlert = "Welcome Harry Potter !!";
-		//WebElement ronWeasly;
+		String name = "Ron Weasly";
+		String expectedGreeting = "Welcome " + name + " !!";
 
 		String actualGreeting = new HomePage(getDriver(), getBaseUrl())
 				.navigate()
 				.clickCustomerLoginButton()
-				.selectAccount("Harry Potter")
+				.selectAccount(name)
 				.clickLogin()
 				.accountGreeting();
 
-		assertEquals(expectedAlert, actualGreeting, "Expected greeting does not match the actual greeting.");
+		assertEquals(expectedGreeting, actualGreeting, "Expected greeting does not match the actual greeting.");
 
 
 	}
