@@ -1,4 +1,5 @@
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotEquals;
 
 import org.testng.annotations.Test;
 
@@ -20,7 +21,7 @@ public class BankingTests extends xyzBankingTestBase{
 				.clickLogin()
 				.accountGreeting();
 
-		assertEquals(expectedGreeting, actualGreeting, "Expected greeting does not match the actual greeting.");
+		assertEquals(expectedGreeting, actualGreeting, "The expected greeting does not match the actual greeting.");
 
 
 	}
@@ -44,8 +45,39 @@ public class BankingTests extends xyzBankingTestBase{
 			++actualAccounts;
 		}
 
-		assertEquals(expectedAccounts, actualAccounts, "Number of expected account balances [5] were not returned.");
+		assertEquals(expectedAccounts, actualAccounts, "The number of expected account balances [5] were not returned.");
 	}
+
+	@Test
+	public void canCreateNewCustomerAccount() {
+
+		String firstName = "Draco";
+		String lastName = "Malfoy";
+		String zipCode = "41357";
+		String fullName = "Draco Malfoy";
+
+		String customerAccount = new HomePage(getDriver(), getBaseUrl())
+				.navigate()
+				.clickBankManagerLoginButton()
+				.clickAddCustomerButton()
+				.enterFirstName(firstName)
+				.enterLastName(lastName)
+				.enterZipCode(zipCode)
+				.submitNewAccount()
+				.acceptAlert()
+				.clickOpenAccountButton()
+				.selectCustomerByFullName(fullName)
+				.selectCurrencyType()
+				.clickProcessButton()
+				.acceptAlert()
+				.clickCustomersButton()
+				.returnAccountInfo();
+
+		assertNotEquals(customerAccount, null);
+
+	}
+
+
 
 
 

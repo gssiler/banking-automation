@@ -33,6 +33,12 @@ public class HomePage extends PageObjectBase{
 		return new CustomerLoginPage (getDriver(), getBaseUrl());
 	}
 
+	public BankManagerLoginPage clickBankManagerLoginButton() {
+		elementControl.clickElement(bankManagerLoginBtn);
+
+		return new BankManagerLoginPage(getDriver(), getRelativeUrl());
+	}
+
 	@Override
 	protected String getRelativeUrl() {
 		return "/login";
