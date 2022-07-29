@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-28T15:38:00 EDT" name="Default suite" finished-at="2022-07-28T15:38:08 EDT" duration-ms="8056">
+  <suite started-at="2022-07-29T14:45:11 EDT" name="Default suite" finished-at="2022-07-29T14:45:16 EDT" duration-ms="4877">
     <groups>
     </groups>
-    <test started-at="2022-07-28T15:38:00 EDT" name="Default test" finished-at="2022-07-28T15:38:08 EDT" duration-ms="8056">
+    <test started-at="2022-07-29T14:45:11 EDT" name="Default test" finished-at="2022-07-29T14:45:16 EDT" duration-ms="4877">
       <class name="BankingTests">
-        <test-method is-config="true" signature="setup()[pri:0, instance:BankingTests@6a01e23]" started-at="2022-07-28T15:38:00 EDT" name="setup" finished-at="2022-07-28T15:38:05 EDT" duration-ms="4302" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:BankingTests@4f638935]" started-at="2022-07-29T14:45:11 EDT" name="setup" finished-at="2022-07-29T14:45:14 EDT" duration-ms="2914" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="canCreateNewCustomerAccount()[pri:0, instance:BankingTests@6a01e23]" started-at="2022-07-28T15:38:05 EDT" name="canCreateNewCustomerAccount" finished-at="2022-07-28T15:38:08 EDT" duration-ms="3541" status="PASS">
+        <test-method signature="canDeleteAccount()[pri:0, instance:BankingTests@4f638935]" started-at="2022-07-29T14:45:14 EDT" name="canDeleteAccount" finished-at="2022-07-29T14:45:16 EDT" duration-ms="1691" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- canCreateNewCustomerAccount -->
-        <test-method is-config="true" signature="cleanup(org.testng.ITestResult)[pri:0, instance:BankingTests@6a01e23]" started-at="2022-07-28T15:38:08 EDT" name="cleanup" finished-at="2022-07-28T15:38:08 EDT" duration-ms="150" status="PASS">
+        </test-method> <!-- canDeleteAccount -->
+        <test-method is-config="true" signature="cleanup(org.testng.ITestResult)[pri:0, instance:BankingTests@4f638935]" started-at="2022-07-29T14:45:16 EDT" name="cleanup" finished-at="2022-07-29T14:45:16 EDT" duration-ms="219" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=canCreateNewCustomerAccount status=SUCCESS method=BankingTests.canCreateNewCustomerAccount()[pri:0, instance:BankingTests@6a01e23] output={null}]]]>
+                <![CDATA[[TestResult name=canDeleteAccount status=SUCCESS method=BankingTests.canDeleteAccount()[pri:0, instance:BankingTests@4f638935] output={null}]]]>
               </value>
             </param>
           </params>

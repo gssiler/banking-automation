@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -56,6 +57,18 @@ public class BankManagerLoginPage extends PageObjectBase{
 	@CacheLookup
 	@FindBy(xpath = "//div[@class='ng-scope']//tr[position()=6]")
 	private WebElement newAccountInfo;
+
+	@CacheLookup
+	@FindBy(css = "ng-click='home()'")
+	private WebElement homeButton;
+
+	@CacheLookup
+	@FindBy(xpath = "//input[@ng-model='searchCustomer']")
+	private WebElement searchCustomer;
+
+	@CacheLookup
+	@FindBy(xpath = "//tbody")
+	private WebElement displaySearchResults;
 
 	public BankManagerLoginPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
@@ -134,6 +147,54 @@ public class BankManagerLoginPage extends PageObjectBase{
 		System.out.println(acctInfo);
 
 		return acctInfo;
+	}
+
+	public BankManagerLoginPage deleteAccount(String name) {
+
+		int i;
+
+		if (name == "Hermoine Granger") {
+			i = 1;
+			WebElement position = getDriver().findElement(By.xpath("//tr[@class='ng-scope'][position()=" + i + "]//td/button"));
+			position.click();
+		} else if (name == "Harry Potter") {
+			i = 2;
+			WebElement position = getDriver().findElement(By.xpath("//tr[@class='ng-scope'][position()=" + i + "]//td/button"));
+			position.click();
+		}else if (name == "Ron Weasly") {
+			i = 3;
+			WebElement position = getDriver().findElement(By.xpath("//tr[@class='ng-scope'][position()=" + i + "]//td/button"));
+			position.click();
+		}else if (name == "Albus Dumbledore") {
+			i = 4;
+			WebElement position = getDriver().findElement(By.xpath("//tr[@class='ng-scope'][position()=" + i + "]//td/button"));
+			position.click();
+		}else if (name == "Neville Longbottom") {
+			i = 5;
+			WebElement position = getDriver().findElement(By.xpath("//tr[@class='ng-scope'][position()=" + i + "]//td/button"));
+			position.click();
+		}
+		return this;
+	}
+
+	public HomePage clickHomeButton() {
+		elementControl.clickElement(homeButton);
+
+		return new HomePage(getDriver(), getRelativeUrl());
+	}
+
+	public BankManagerLoginPage searchCustomerName(String name) {
+		elementControl.setText(searchCustomer, name);
+
+		return this;
+	}
+
+	public String displaySearchResults() {
+		String searchResults = displaySearchResults.getText();
+		System.out.println(searchResults);
+
+		return searchResults;
+
 	}
 
 	@Override

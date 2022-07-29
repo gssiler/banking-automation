@@ -77,6 +77,24 @@ public class BankingTests extends xyzBankingTestBase{
 
 	}
 
+	@Test
+	public void canDeleteAccount() {
+
+		String name = "Ron Weasly";
+		String expectedSearchResults = "";
+
+		String actualSearchResults = new HomePage(getDriver(), getBaseUrl())
+				.navigate()
+				.clickBankManagerLoginButton()
+				.clickCustomersButton()
+				.deleteAccount(name)
+				.searchCustomerName(name)
+				.displaySearchResults();
+
+		assertEquals(actualSearchResults, expectedSearchResults, "An account populated that should not exist.");
+
+	}
+
 
 
 
