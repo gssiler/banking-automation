@@ -71,16 +71,16 @@ public class BankingTests extends xyzBankingTestBase{
 				.clickProcessButton()
 				.acceptAlert()
 				.clickCustomersButton()
-				.returnAccountInfo();
+				.returnAccountInfo(fullName);
 
-		assertNotEquals(customerAccount, null);
+		assertNotEquals(customerAccount, null, "The new customers account information should be displayed. Please try again.");
 
 	}
 
 	@Test
 	public void canDeleteAccount() {
 
-		String name = "Ron Weasly";
+		String name = "Harry Potter";
 		String expectedSearchResults = "";
 
 		String actualSearchResults = new HomePage(getDriver(), getBaseUrl())

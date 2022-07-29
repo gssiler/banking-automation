@@ -142,10 +142,40 @@ public class BankManagerLoginPage extends PageObjectBase{
 		return this;
 	}
 
-	public String returnAccountInfo() {
-		String acctInfo = newAccountInfo.getText();
-		System.out.println(acctInfo);
+	public String returnAccountInfo(String name) {
+		//String acctInfo = newAccountInfo.getText();
+		//	System.out.println(acctInfo);
 
+		//return acctInfo;
+
+		int i;
+		String acctInfo;
+
+		if (name == "Hermoine Granger") {
+			i = 1;
+			acctInfo = getDriver().findElement(By.xpath("//div[@class='ng-scope']//tr[position()=" + i + "]")).getText();
+			System.out.println(acctInfo);
+		} else if (name == "Harry Potter") {
+			i = 2;
+			acctInfo = getDriver().findElement(By.xpath("//div[@class='ng-scope']//tr[position()=" + i + "]")).getText();
+			System.out.println(acctInfo);
+		}else if (name == "Ron Weasly") {
+			i = 3;
+			acctInfo = getDriver().findElement(By.xpath("//div[@class='ng-scope']//tr[position()=" + i + "]")).getText();
+			System.out.println(acctInfo);
+		}else if (name == "Albus Dumbledore") {
+			i = 4;
+			acctInfo = getDriver().findElement(By.xpath("//div[@class='ng-scope']//tr[position()=" + i + "]")).getText();
+			System.out.println(acctInfo);
+		}else if (name == "Neville Longbottom") {
+			i = 5;
+			acctInfo = getDriver().findElement(By.xpath("//div[@class='ng-scope']//tr[position()=" + i + "]")).getText();
+			System.out.println(acctInfo);
+		}else {
+			i = 6;
+			acctInfo = getDriver().findElement(By.xpath("//div[@class='ng-scope']//tr[position()=" + i + "]")).getText();
+			System.out.println(acctInfo);
+		}
 		return acctInfo;
 	}
 
