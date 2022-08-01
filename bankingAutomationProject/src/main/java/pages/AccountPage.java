@@ -1,9 +1,11 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import framework.PageObjectBase;
 
@@ -14,12 +16,16 @@ public class AccountPage extends PageObjectBase{
 	private WebElement accountGreeting;
 
 	@CacheLookup
-	@FindBy(xpath = "//strong[@class='ng-binding'][position()=2]")
+	@FindBy(xpath = "//div[@ng-hide='noAccount'][position()=1]")
 	private WebElement accountBalance;
 
 	@CacheLookup
 	@FindBy(xpath = "//button[@class='btn logout']")
 	private WebElement logoutButton;
+
+	@CacheLookup
+	@FindBy(xpath = "//select")
+	private WebElement selectAccount;
 
 	public AccountPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
@@ -30,12 +36,18 @@ public class AccountPage extends PageObjectBase{
 		System.out.println(greeting);
 
 		return greeting;
-
 	}
 
 	public AccountPage returnAccountBalance() {
-		String balance = accountBalance.getText();
-		System.out.println(balance);
+		System.out.println(accountGreeting.getText() + " - (" + accountBalance.getText() + ")");
+
+		return this;
+	}
+
+	public AccountPage selectAccount(int i) {
+		new Select(selectAccount);
+		WebElement account = getDriver().findElement(By.xpath("//option[position()=" + i + "]"));
+		account.click();
 
 		return this;
 	}

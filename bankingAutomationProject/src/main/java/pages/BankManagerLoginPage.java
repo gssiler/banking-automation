@@ -43,10 +43,6 @@ public class BankManagerLoginPage extends PageObjectBase{
 	private WebElement currency;
 
 	@CacheLookup
-	@FindBy(xpath = "//select[@id='currency']/option[position()=3]")
-	private WebElement pound;
-
-	@CacheLookup
 	@FindBy(css = "[type='submit']")
 	private WebElement processButton;
 
@@ -124,8 +120,8 @@ public class BankManagerLoginPage extends PageObjectBase{
 		return this;
 	}
 
-	public BankManagerLoginPage selectCurrencyType() {
-		elementControl.setByVisibleText(currency, pound.getText());
+	public BankManagerLoginPage selectCurrencyType(String currencyType) {
+		elementControl.setByVisibleText(currency, currencyType);
 
 		return this;
 	}
@@ -143,10 +139,6 @@ public class BankManagerLoginPage extends PageObjectBase{
 	}
 
 	public String returnAccountInfo(String name) {
-		//String acctInfo = newAccountInfo.getText();
-		//	System.out.println(acctInfo);
-
-		//return acctInfo;
 
 		int i;
 		String acctInfo;

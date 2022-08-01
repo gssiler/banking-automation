@@ -29,7 +29,7 @@ public class CustomerLoginPage extends PageObjectBase {
 		return this;
 	}
 
-	public CustomerLoginPage selectCustomerAccount(int i) {
+	public CustomerLoginPage selectCustomer(int i) {
 
 		new Select(selectUser);
 		WebElement user = getDriver().findElement(By.cssSelector("[value = '" + i + "']"));
