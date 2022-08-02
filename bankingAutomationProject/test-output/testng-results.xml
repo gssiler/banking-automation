@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-29T15:04:40 EDT" name="Default suite" finished-at="2022-07-29T15:04:47 EDT" duration-ms="7525">
+  <suite started-at="2022-08-02T16:17:42 EDT" name="Default suite" finished-at="2022-08-02T16:17:55 EDT" duration-ms="13164">
     <groups>
     </groups>
-    <test started-at="2022-07-29T15:04:40 EDT" name="Default test" finished-at="2022-07-29T15:04:47 EDT" duration-ms="7525">
+    <test started-at="2022-08-02T16:17:42 EDT" name="Default test" finished-at="2022-08-02T16:17:55 EDT" duration-ms="13164">
       <class name="BankingTests">
-        <test-method is-config="true" signature="setup()[pri:0, instance:BankingTests@4f638935]" started-at="2022-07-29T15:04:40 EDT" name="setup" finished-at="2022-07-29T15:04:44 EDT" duration-ms="4279" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:BankingTests@4387b79e]" started-at="2022-08-02T16:17:42 EDT" name="setup" finished-at="2022-08-02T16:17:52 EDT" duration-ms="9829" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="canCreateNewCustomerAccount()[pri:0, instance:BankingTests@4f638935]" started-at="2022-07-29T15:04:44 EDT" name="canCreateNewCustomerAccount" finished-at="2022-07-29T15:04:47 EDT" duration-ms="3022" status="PASS">
+        <test-method signature="canDepositPoundsIntoAccount()[pri:0, instance:BankingTests@4387b79e]" started-at="2022-08-02T16:17:52 EDT" name="canDepositPoundsIntoAccount" finished-at="2022-08-02T16:17:55 EDT" duration-ms="2891" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- canCreateNewCustomerAccount -->
-        <test-method is-config="true" signature="cleanup(org.testng.ITestResult)[pri:0, instance:BankingTests@4f638935]" started-at="2022-07-29T15:04:47 EDT" name="cleanup" finished-at="2022-07-29T15:04:47 EDT" duration-ms="166" status="PASS">
+        </test-method> <!-- canDepositPoundsIntoAccount -->
+        <test-method is-config="true" signature="cleanup(org.testng.ITestResult)[pri:0, instance:BankingTests@4387b79e]" started-at="2022-08-02T16:17:55 EDT" name="cleanup" finished-at="2022-08-02T16:17:55 EDT" duration-ms="319" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=canCreateNewCustomerAccount status=SUCCESS method=BankingTests.canCreateNewCustomerAccount()[pri:0, instance:BankingTests@4f638935] output={null}]]]>
+                <![CDATA[[TestResult name=canDepositPoundsIntoAccount status=SUCCESS method=BankingTests.canDepositPoundsIntoAccount()[pri:0, instance:BankingTests@4387b79e] output={null}]]]>
               </value>
             </param>
           </params>

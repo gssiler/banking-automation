@@ -5,7 +5,7 @@
     <classes>
       <class name="BankingTests">
         <methods>
-          <include name="canCreateNewCustomerAccount"/>
+          <include name="canReturnAllAccountBalances"/>
           <include name="cleanup"/>
           <include name="setup"/>
         </methods>

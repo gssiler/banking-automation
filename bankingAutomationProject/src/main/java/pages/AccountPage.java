@@ -27,6 +27,26 @@ public class AccountPage extends PageObjectBase{
 	@FindBy(xpath = "//select")
 	private WebElement selectAccount;
 
+	@CacheLookup
+	@FindBy(xpath = "//button[@ng-click='deposit()']")
+	private WebElement depositOption;
+
+	@CacheLookup
+	@FindBy(xpath = "//select/option[position()=2]")
+	private WebElement poundAccount;
+
+	@CacheLookup
+	@FindBy(xpath = "//div/input")
+	private WebElement inputDepositAmomunt;
+
+	@CacheLookup
+	@FindBy(xpath = "//button[@type='submit']")
+	private WebElement submitButton;
+
+	@CacheLookup
+	@FindBy(xpath = "//div/span[@ng-show='message']")
+	private WebElement transactionMessage;
+
 	public AccountPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
 	}
@@ -56,6 +76,36 @@ public class AccountPage extends PageObjectBase{
 		elementControl.clickElement(logoutButton);
 
 		return new CustomerLoginPage(getDriver(), getRelativeUrl());
+	}
+
+	public AccountPage selectPoundAccount() {
+		elementControl.clickElement(poundAccount);
+
+		return this;
+	}
+
+	public AccountPage selectDepositOption() {
+		elementControl.clickElement(depositOption);
+
+		return this;
+	}
+
+	public AccountPage inputDeposit(String amount) {
+		elementControl.setText(inputDepositAmomunt, amount);
+
+		return this;
+	}
+
+	public AccountPage clickSubmitButton() {
+		elementControl.clickElement(submitButton);
+
+		return this;
+	}
+
+	public String retrieveTransactionMessage() {
+		String actualMessage = transactionMessage.getText();
+
+		return actualMessage;
 	}
 
 	@Override

@@ -15,8 +15,12 @@ public class BankingTests extends xyzBankingTestBase {
 		String name = "Ron Weasly";
 		String expectedGreeting = "Welcome " + name + " !!";
 
-		String actualGreeting = new HomePage(getDriver(), getBaseUrl()).navigate().clickCustomerLoginButton()
-				.selectAccount(name).clickLogin().accountGreeting();
+		String actualGreeting = new HomePage(getDriver(), getBaseUrl())
+				.navigate()
+				.clickCustomerLoginButton()
+				.selectAccount(name)
+				.clickLogin()
+				.accountGreeting();
 
 		assertEquals(expectedGreeting, actualGreeting, "The expected greeting does not match the actual greeting.");
 
@@ -73,14 +77,24 @@ public class BankingTests extends xyzBankingTestBase {
 		String fullName = "Draco Malfoy";
 		String currencyType = "Rupee";
 
-		String customerAccount = new HomePage(getDriver(), getBaseUrl()).navigate().clickBankManagerLoginButton()
-				.clickAddCustomerButton().enterFirstName(firstName).enterLastName(lastName).enterZipCode(zipCode)
-				.submitNewAccount().acceptAlert().clickOpenAccountButton().selectCustomerByFullName(fullName)
-				.selectCurrencyType(currencyType).clickProcessButton().acceptAlert().clickCustomersButton()
+		String customerAccount = new HomePage(getDriver(), getBaseUrl())
+				.navigate()
+				.clickBankManagerLoginButton()
+				.clickAddCustomerButton()
+				.enterFirstName(firstName)
+				.enterLastName(lastName)
+				.enterZipCode(zipCode)
+				.submitNewAccount()
+				.acceptAlert()
+				.clickOpenAccountButton()
+				.selectCustomerByFullName(fullName)
+				.selectCurrencyType(currencyType)
+				.clickProcessButton()
+				.acceptAlert()
+				.clickCustomersButton()
 				.returnAccountInfo(fullName);
 
-		assertNotEquals(customerAccount, null,
-				"The new customers account information should be displayed. Please try again.");
+		assertNotEquals(customerAccount, null, "The new customers account information should be displayed. Please try again.");
 
 	}
 
@@ -90,10 +104,37 @@ public class BankingTests extends xyzBankingTestBase {
 		String name = "Harry Potter";
 		String expectedSearchResults = "";
 
-		String actualSearchResults = new HomePage(getDriver(), getBaseUrl()).navigate().clickBankManagerLoginButton()
-				.clickCustomersButton().deleteAccount(name).searchCustomerName(name).displaySearchResults();
+		String actualSearchResults = new HomePage(getDriver(), getBaseUrl())
+				.navigate()
+				.clickBankManagerLoginButton()
+				.clickCustomersButton()
+				.deleteAccount(name)
+				.searchCustomerName(name)
+				.displaySearchResults();
 
 		assertEquals(actualSearchResults, expectedSearchResults, "An account populated that should not exist.");
+
+	}
+
+	@Test
+	public void canDepositPoundsIntoAccount() {
+
+		String name = "Albus Dumbledore";
+		String amount = "800";
+		String expectedMessage = "Deposit Successful";
+
+		String actualMessage = new HomePage(getDriver(), getBaseUrl())
+				.navigate()
+				.clickCustomerLoginButton()
+				.selectAccount(name)
+				.clickLogin()
+				.selectPoundAccount()
+				.selectDepositOption()
+				.inputDeposit(amount)
+				.clickSubmitButton()
+				.retrieveTransactionMessage();
+
+		assertEquals(expectedMessage, actualMessage, "Deposit Unsuccessful. Please try again.");
 
 	}
 
