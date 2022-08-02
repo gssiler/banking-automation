@@ -130,11 +130,32 @@ public class BankingTests extends xyzBankingTestBase {
 				.clickLogin()
 				.selectPoundAccount()
 				.selectDepositOption()
-				.inputDeposit(amount)
+				.inputAmount(amount)
 				.clickSubmitButton()
 				.retrieveTransactionMessage();
 
 		assertEquals(expectedMessage, actualMessage, "Deposit Unsuccessful. Please try again.");
+
+	}
+
+	@Test
+	public void canWithdrawlDollarsFromAccount() {
+
+		String name = "Hermoine Granger";
+		String amount = "2500";
+		String expectedMessage = "Transaction successful";
+
+		String actualMessage = new HomePage(getDriver(), getBaseUrl())
+				.navigate()
+				.clickCustomerLoginButton()
+				.selectAccount(name)
+				.clickLogin()
+				.selectWithdrawlOption()
+				.inputAmount(amount)
+				.clickSubmitButton()
+				.retrieveTransactionMessage();
+
+		assertEquals(expectedMessage, actualMessage, "Withdrawl Unsuccessful. Please try again.");
 
 	}
 

@@ -37,7 +37,7 @@ public class AccountPage extends PageObjectBase{
 
 	@CacheLookup
 	@FindBy(xpath = "//div/input")
-	private WebElement inputDepositAmomunt;
+	private WebElement inputAmount;
 
 	@CacheLookup
 	@FindBy(xpath = "//button[@type='submit']")
@@ -46,6 +46,10 @@ public class AccountPage extends PageObjectBase{
 	@CacheLookup
 	@FindBy(xpath = "//div/span[@ng-show='message']")
 	private WebElement transactionMessage;
+
+	@CacheLookup
+	@FindBy(xpath = "//div/button[@ng-click='withdrawl()']")
+	private WebElement withdrawlOption;
 
 	public AccountPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
@@ -90,8 +94,8 @@ public class AccountPage extends PageObjectBase{
 		return this;
 	}
 
-	public AccountPage inputDeposit(String amount) {
-		elementControl.setText(inputDepositAmomunt, amount);
+	public AccountPage inputAmount(String amount) {
+		elementControl.setText(inputAmount, amount);
 
 		return this;
 	}
@@ -106,6 +110,12 @@ public class AccountPage extends PageObjectBase{
 		String actualMessage = transactionMessage.getText();
 
 		return actualMessage;
+	}
+
+	public AccountPage selectWithdrawlOption() {
+		elementControl.clickElement(withdrawlOption);
+
+		return this;
 	}
 
 	@Override
