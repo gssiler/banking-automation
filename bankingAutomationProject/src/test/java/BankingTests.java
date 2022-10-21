@@ -158,5 +158,4 @@ public class BankingTests extends xyzBankingTestBase {
 		assertEquals(expectedMessage, actualMessage, "Withdrawl Unsuccessful. Please try again.");
 
 	}
-
 }
